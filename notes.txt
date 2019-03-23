@@ -1,0 +1,29 @@
+Tutorial Reference
+https://www.youtube.com/playlist?list=PLkz1SCf5iB4enAR00Z46JwY9GGkaS2NON
+
+Quick Start Reference
+https://kafka.apache.org/quickstart
+
+
+Start ZooKeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Start Kafka
+bin/kafka-server-start.sh config/server.properties
+
+
+Create topic
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+
+Start Producer
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+
+Start Consumer
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
+
+
+
+sudo lsof -i -n -P | grep 9092
